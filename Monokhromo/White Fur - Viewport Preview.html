@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>White Fur — Viewport Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@300;400&display=swap" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+    crossorigin="anonymous"></script>
+  <script type="text/babel" src="design-canvas.jsx"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0e0e11; color: #f1ece2;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-size: 13px; line-height: 1.5;
+    }
+
+    /* ── Device shell: browser chrome ── */
+    .dev-shell {
+      display: flex; flex-direction: column;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.07);
+      background: #1a1a1e;
+    }
+    .dev-bar {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px;
+      background: #222226;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      flex-shrink: 0;
+    }
+    .dev-dots { display: flex; gap: 6px; }
+    .dev-dot {
+      width: 11px; height: 11px; border-radius: 50%;
+    }
+    .dev-dot-r { background: #ff5f57; }
+    .dev-dot-y { background: #febc2e; }
+    .dev-dot-g { background: #28c840; }
+    .dev-url {
+      flex: 1; background: #2d2d32; border-radius: 5px;
+      padding: 4px 10px;
+      font-family: "IBM Plex Mono", monospace; font-size: 10.5px;
+      color: rgba(241,236,226,0.45); letter-spacing: 0.02em;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .dev-viewport {
+      flex: 1; overflow: hidden; position: relative; min-height: 0;
+    }
+    .dev-iframe {
+      position: absolute; top: 0; left: 0;
+      border: 0; display: block;
+      transform-origin: top left;
+    }
+
+    /* ── Tablet shell ── */
+    .dev-shell-tablet .dev-bar { padding: 8px 12px; }
+    .dev-shell-tablet .dev-dot { width: 9px; height: 9px; }
+
+    /* ── Phone shell ── */
+    .dev-shell-phone {
+      border-radius: 40px;
+    }
+    .dev-shell-phone .dev-bar {
+      border-radius: 0; padding: 18px 18px 10px;
+      flex-direction: column; gap: 8px; align-items: center;
+      background: #1a1a1e;
+    }
+    .dev-phone-notch {
+      width: 100px; height: 28px;
+      background: #111114; border-radius: 20px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .dev-phone-notch-cam {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #222226; border: 1.5px solid #2e2e34;
+    }
+    .dev-phone-notch-pill {
+      width: 56px; height: 6px; background: #1c1c20; border-radius: 999px;
+    }
+    .dev-phone-status {
+      width: 100%; display: flex; justify-content: space-between;
+      padding: 0 6px;
+    }
+    .dev-phone-status span {
+      font-family: "IBM Plex Mono", monospace; font-size: 9.5px;
+      color: rgba(241,236,226,0.55); letter-spacing: 0.04em;
+    }
+    .dev-home-bar {
+      height: 28px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; background: #1a1a1e;
+    }
+    .dev-home-pill {
+      width: 120px; height: 5px; background: rgba(241,236,226,0.25);
+      border-radius: 999px;
+    }
+
+    /* ── Labels ── */
+    .dev-label {
+      font-family: "IBM Plex Mono", monospace; font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(241,236,226,0.38); text-align: center; padding: 14px 0 0;
+    }
+
+    /* ── DCArtboard contents ── */
+    .vp-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+      height: 100%; padding: 24px 20px 20px;
+    }
+    .vp-device { flex: 1; min-height: 0; width: 100%; display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+const PAGE_URL = "phase2/gallery/white-fur/index.html";
+
+/* ── Generic browser-chrome shell ─────────────────────────────────────── */
+function BrowserShell({ url, iframeW, iframeH, displayH, className = "", children }) {
+  const viewRef = useRef(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    if (!viewRef.current) return;
+    const obs = new ResizeObserver(([e]) => {
+      const w = e.contentRect.width;
+      setScale(Math.min(1, w / iframeW));
+    });
+    obs.observe(viewRef.current);
+    return () => obs.disconnect();
+  }, [iframeW]);
+
+  const scaledH = Math.round(iframeH * scale);
+
+  return (
+    <div className={`dev-shell ${className}`}
+         style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
+      <div className="dev-bar">
+        <div className="dev-dots">
+          <div className="dev-dot dev-dot-r" />
+          <div className="dev-dot dev-dot-y" />
+          <div className="dev-dot dev-dot-g" />
+        </div>
+        <div className="dev-url">monokhromo.com/gallery/white-fur/</div>
+      </div>
+      <div className="dev-viewport" ref={viewRef} style={{ height: scaledH }}>
+        <iframe
+          className="dev-iframe"
+          src={PAGE_URL}
+          title="White Fur preview"
+          style={{
+            width: iframeW, height: iframeH,
+            transform: `scale(${scale})`,
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+/* ── Phone shell ─────────────────────────────────────────────────────── */
+function PhoneShell({ url, iframeW = 390, iframeH = 844 }) {
+  const viewRef = useRef(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    if (!viewRef.current) return;
+    const obs = new ResizeObserver(([e]) => {
+      const w = e.contentRect.width;
+      setScale(Math.min(1, w / iframeW));
+    });
+    obs.observe(viewRef.current);
+    return () => obs.disconnect();
+  }, [iframeW]);
+
+  const scaledH = Math.round(iframeH * scale);
+
+  return (
+    <div className="dev-shell dev-shell-phone"
+         style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+      {/* Notch bar */}
+      <div className="dev-bar">
+        <div className="dev-phone-notch">
+          <div className="dev-phone-notch-pill" />
+          <div className="dev-phone-notch-cam" />
+        </div>
+        <div className="dev-phone-status">
+          <span>09:41</span>
+          <span>●●●○○ ≋ 100%</span>
+        </div>
+      </div>
+      <div className="dev-viewport" ref={viewRef} style={{ height: scaledH }}>
+        <iframe
+          className="dev-iframe"
+          src={PAGE_URL}
+          title="White Fur preview mobile"
+          style={{
+            width: iframeW, height: iframeH,
+            transform: `scale(${scale})`,
+          }}
+        />
+      </div>
+      <div className="dev-home-bar">
+        <div className="dev-home-pill" />
+      </div>
+    </div>
+  );
+}
+
+/* ── Main app ─────────────────────────────────────────────────────────── */
+function App() {
+  return (
+    <DesignCanvas title="White Fur — Viewport Preview">
+      {/* Desktop */}
+      <DCSection id="s1" title="White Fur — Gallery Page">
+        <DCArtboard id="desktop" label="Desktop · 1440 px" width={1500} height={1040}>
+          <div className="vp-wrap">
+            <div className="vp-device">
+              <BrowserShell iframeW={1440} iframeH={960} />
+            </div>
+            <div className="dev-label">Desktop · 1440 × 960 px</div>
+          </div>
+        </DCArtboard>
+
+        <DCArtboard id="tablet" label="Tablet · 768 px" width={880} height={1160}>
+          <div className="vp-wrap">
+            <div className="vp-device">
+              <BrowserShell
+                iframeW={768} iframeH={1024}
+                className="dev-shell-tablet"
+              />
+            </div>
+            <div className="dev-label">Tablet · 768 × 1024 px</div>
+          </div>
+        </DCArtboard>
+
+        <DCArtboard id="phone" label="Phone · 390 px" width={480} height={1060}>
+          <div className="vp-wrap">
+            <div className="vp-device">
+              <PhoneShell iframeW={390} iframeH={844} />
+            </div>
+            <div className="dev-label">Phone · 390 × 844 px (iPhone 14)</div>
+          </div>
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

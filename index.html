@@ -48,6 +48,15 @@
   }
   </script>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-61E58CEBNS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-61E58CEBNS');
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,7 +80,8 @@
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="/" class="logo" aria-label="The Monokhromo Collection — return to home">
-        <img src="/assets/logo/monokhromo-logo.png" alt="The Monokhromo Collection" class="logo-img" width="40" height="40">
+        <img src="/assets/logo/monokhromo-logo.png" alt="" class="logo-img" width="40" height="40" onerror="this.style.display='none'">
+        <span class="logo-wordmark">MONOKHROMO</span>
       </a>
 
       <button
@@ -110,10 +120,12 @@
             <a href="/collections/beauty/" class="cta-link">Beauty Collection</a>
             <a href="#collection" class="cta-link">Malta in Shadow</a>
           </div>
+          <span class="hero-bg-mark" aria-hidden="true">MONO<br>KHROMO</span>
         </div>
 
         <div class="hero-image" aria-hidden="true">
           <div class="ph ph--hero"></div>
+          <span class="hero-image-label">Malta in Shadow — Volume I</span>
         </div>
 
       </div>
@@ -142,6 +154,7 @@
           <figure class="gallery-figure">
             <div class="gallery-wrap">
               <div class="ph ph--doorway" aria-hidden="true"></div>
+              <span class="gallery-mark" aria-hidden="true">I</span>
               <img
                 src="assets/images/black-doorway-study-valletta-malta.jpg"
                 alt="A black doorway recessed into pale limestone, Valletta — Malta in Shadow Volume I"
@@ -160,6 +173,7 @@
           <figure class="gallery-figure">
             <div class="gallery-wrap">
               <div class="ph ph--stone" aria-hidden="true"></div>
+              <span class="gallery-mark" aria-hidden="true">II</span>
               <img
                 src="assets/images/light-across-stone-mdina-malta.jpg"
                 alt="Raking light across ancient limestone, Mdina — Malta in Shadow Volume I"
@@ -178,6 +192,7 @@
           <figure class="gallery-figure">
             <div class="gallery-wrap">
               <div class="ph ph--sea" aria-hidden="true"></div>
+              <span class="gallery-mark" aria-hidden="true">III</span>
               <img
                 src="assets/images/sea-ladder-mediterranean.jpg"
                 alt="Iron sea ladder descending into dark water, Mediterranean — Malta in Shadow Volume I"
@@ -196,6 +211,7 @@
           <figure class="gallery-figure">
             <div class="gallery-wrap">
               <div class="ph ph--street" aria-hidden="true"></div>
+              <span class="gallery-mark" aria-hidden="true">IV</span>
               <img
                 src="assets/images/the-narrow-street-malta.jpg"
                 alt="A narrow street dissolving into shadow and light, Malta — Malta in Shadow Volume I"
@@ -214,6 +230,7 @@
           <figure class="gallery-figure">
             <div class="gallery-wrap">
               <div class="ph ph--harbour" aria-hidden="true"></div>
+              <span class="gallery-mark" aria-hidden="true">V</span>
               <img
                 src="assets/images/harbour-geometry-sliema-malta.jpg"
                 alt="Geometric study of harbour walls and still water, Sliema — Malta in Shadow Volume I"
@@ -232,6 +249,7 @@
           <figure class="gallery-figure">
             <div class="gallery-wrap">
               <div class="ph ph--trace" aria-hidden="true"></div>
+              <span class="gallery-mark" aria-hidden="true">VI</span>
               <img
                 src="assets/images/human-trace-street-study-malta.jpg"
                 alt="A trace of human presence on a Maltese street — Malta in Shadow Volume I"
