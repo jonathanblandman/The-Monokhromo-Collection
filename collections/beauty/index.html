@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beauty — a collection of limited-edition black-and-white fine art portrait photography. Studio-lit studies of stillness, light, and the quiet presence of the human form. The Monokhromo Collection.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050505">
+
+  <title>Beauty — Fine Art Portrait Photography | The Monokhromo Collection</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://monokhromo.com/collections/beauty/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Beauty — Fine Art Portrait Photography | MONOKHROMO">
+  <meta property="og:description" content="A collection of limited-edition black-and-white fine art portrait photography. Studio-lit studies of stillness, light, and the quiet presence of the human form.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://monokhromo.com/collections/beauty/">
+  <meta property="og:image" content="https://monokhromo.com/assets/images/prints/mono-lisa.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1500">
+  <meta property="og:image:alt" content="Beauty collection — black-and-white fine art portrait photography by The Monokhromo Collection">
+  <meta property="og:site_name" content="The Monokhromo Collection">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Beauty — Fine Art Portrait Photography | MONOKHROMO">
+  <meta name="twitter:description" content="Limited-edition black-and-white fine art portrait photography. Studies of stillness, light, and form.">
+  <meta name="twitter:image" content="https://monokhromo.com/assets/images/prints/mono-lisa.jpg">
+
+  <!-- Schema.org — CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Beauty",
+    "description": "A collection of limited-edition black-and-white fine art portrait photography by The Monokhromo Collection. Studio-lit studies of stillness, light, and the quiet presence of the human form.",
+    "url": "https://monokhromo.com/collections/beauty/",
+    "image": "https://monokhromo.com/assets/images/prints/mono-lisa.jpg",
+    "creator": {
+      "@type": "Organization",
+      "name": "The Monokhromo Collection",
+      "url": "https://monokhromo.com"
+    },
+    "hasPart": [
+      {
+        "@type": "Product",
+        "name": "Mono Lisa",
+        "url": "https://monokhromo.com/prints/mono-lisa/",
+        "image": "https://monokhromo.com/assets/images/prints/mono-lisa.jpg",
+        "description": "A limited-edition black-and-white fine art portrait. Edition of 50 (A4), 25 (A3), 15 (A2)."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org — Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://monokhromo.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Beauty",
+        "item": "https://monokhromo.com/collections/beauty/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  <!-- Page Styles -->
+  <style>
+    /* ── Collection Page ──────────────────────────────────── */
+
+    .collection-header {
+      padding-block-start: calc(var(--header-h) + clamp(4rem, 8vw, 7rem));
+      padding-block-end: clamp(3rem, 6vw, 5rem);
+      padding-inline: clamp(1.5rem, 5vw, 4rem);
+      max-width: var(--max-w);
+      margin-inline: auto;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .collection-eyebrow {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-grey-mid);
+      margin-block-end: 1.25rem;
+    }
+
+    .collection-eyebrow a {
+      color: var(--color-grey-mid);
+      text-decoration: none;
+    }
+
+    .collection-eyebrow a:hover {
+      color: var(--color-grey-light);
+    }
+
+    .collection-eyebrow span {
+      margin-inline: 0.5em;
+    }
+
+    .collection-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.75rem, 6vw, 4.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-white);
+      line-height: 1.05;
+      margin-block-end: 1.5rem;
+    }
+
+    .collection-statement {
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 1.75vw, 1.1875rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-grey-light);
+      line-height: 1.7;
+      max-width: 54ch;
+    }
+
+    .collection-meta {
+      margin-block-start: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .collection-meta-item {
+      font-family: var(--font-sans);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-grey-mid);
+    }
+
+    .collection-meta-item strong {
+      display: block;
+      color: var(--color-grey-light);
+      margin-block-end: 0.2rem;
+    }
+
+    /* ── Works Grid ───────────────────────────────────────── */
+
+    .collection-works {
+      padding-block: clamp(4rem, 8vw, 7rem);
+      padding-inline: clamp(1.5rem, 5vw, 4rem);
+      max-width: var(--max-w);
+      margin-inline: auto;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    @media (max-width: 900px) {
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .works-grid { grid-template-columns: 1fr; }
+    }
+
+    .work-item {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .work-item:focus-visible {
+      outline: 1px solid var(--color-grey-light);
+      outline-offset: 3px;
+    }
+
+    .work-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-bg-soft);
+      aspect-ratio: 4 / 5;
+      margin-block-end: 1rem;
+    }
+
+    .work-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.4s ease;
+    }
+
+    .work-item:hover .work-image {
+      opacity: 0.85;
+    }
+
+    /* Placeholder shown when no image is loaded */
+    .work-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .work-placeholder-text {
+      font-family: var(--font-sans);
+      font-size: 0.625rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-grey-mid);
+    }
+
+    .work-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-white);
+      line-height: 1.2;
+      margin-block-end: 0.35rem;
+    }
+
+    .work-meta {
+      font-family: var(--font-sans);
+      font-size: 0.6875rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--color-grey-mid);
+    }
+
+    .work-price {
+      display: block;
+      margin-block-start: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--color-grey-light);
+    }
+
+    /* ── Coming Soon placeholder work ────────────────────── */
+
+    .work-item--pending {
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .work-item--pending .work-placeholder-text::after {
+      content: 'Coming';
+    }
+
+    /* ── Collection close ─────────────────────────────────── */
+
+    .collection-close {
+      padding-block: clamp(3rem, 6vw, 5rem);
+      padding-inline: clamp(1.5rem, 5vw, 4rem);
+      max-width: var(--max-w);
+      margin-inline: auto;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .collection-close-text {
+      font-family: var(--font-serif);
+      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-grey-light);
+    }
+
+    .collection-close-link {
+      font-family: var(--font-sans);
+      font-size: 0.6875rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-grey-mid);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .collection-close-link:hover {
+      color: var(--color-grey-light);
+      border-color: var(--color-grey-mid);
+    }
+  </style>
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-61E58CEBNS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-61E58CEBNS');
+  </script>
+</head>
+<body>
+
+  <!-- ─── Header ─── -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="The Monokhromo Collection — return to home">
+        <img src="/assets/logo/monokhromo-logo.png" alt="The Monokhromo Collection" class="logo-img" width="40" height="40">
+      </a>
+
+      <button
+        class="nav-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="nav-menu" aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li><a href="/collections/beauty/" class="nav-link" aria-current="page">Beauty</a></li>
+          <li><a href="/#collection" class="nav-link">Malta in Shadow</a></li>
+          <li><a href="/#prints" class="nav-link">Prints</a></li>
+          <li><a href="/#journal" class="nav-link">Journal</a></li>
+          <li><a href="/#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── Collection Header ─── -->
+    <div class="collection-header">
+
+      <nav class="collection-eyebrow" aria-label="Breadcrumb">
+        <a href="/">The Monokhromo Collection</a>
+        <span aria-hidden="true">/</span>
+        <span>Beauty</span>
+      </nav>
+
+      <h1 class="collection-title">Beauty</h1>
+
+      <p class="collection-statement">
+        Studio-lit studies of stillness, light, and the quiet presence of the human form.
+        Each work is reduced to shadow and tone — not a portrait of appearance, but of interior life.
+        Works in black and white only. Limited editions.
+      </p>
+
+      <div class="collection-meta" role="list" aria-label="Collection details">
+        <div class="collection-meta-item" role="listitem">
+          <strong>Category</strong>
+          Fine art portrait photography
+        </div>
+        <div class="collection-meta-item" role="listitem">
+          <strong>Format</strong>
+          Black and white only
+        </div>
+        <div class="collection-meta-item" role="listitem">
+          <strong>Editions</strong>
+          Limited — A4 · A3 · A2
+        </div>
+        <div class="collection-meta-item" role="listitem">
+          <strong>Delivery</strong>
+          High-resolution digital file · 300 dpi
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ─── Works ─── -->
+    <section class="collection-works" aria-labelledby="works-heading">
+      <h2 id="works-heading" class="sr-only">Works in the Beauty collection</h2>
+
+      <div class="works-grid" role="list">
+
+        <!-- Mono Lisa -->
+        <a
+          href="/prints/mono-lisa/"
+          class="work-item"
+          role="listitem"
+          aria-label="Mono Lisa — view print details and purchase"
+        >
+          <div class="work-image-wrap">
+            <img
+              src="/assets/images/prints/mono-lisa.jpg"
+              alt="Mono Lisa — black-and-white fine art portrait. A woman, eyes closed, head tilted, light falling gently across skin and hair against a deep studio background."
+              width="1200"
+              height="1500"
+              class="work-image"
+              loading="lazy"
+            >
+          </div>
+          <h3 class="work-title">Mono Lisa</h3>
+          <p class="work-meta">Beauty &nbsp;·&nbsp; Edition of 50 / 25 / 15</p>
+          <span class="work-price">From £65</span>
+        </a>
+
+        <!-- Placeholder — forthcoming work 2 -->
+        <div class="work-item work-item--pending" aria-hidden="true">
+          <div class="work-image-wrap">
+            <div class="work-placeholder">
+              <span class="work-placeholder-text"></span>
+            </div>
+          </div>
+          <h3 class="work-title">&nbsp;</h3>
+          <p class="work-meta">&nbsp;</p>
+        </div>
+
+        <!-- Placeholder — forthcoming work 3 -->
+        <div class="work-item work-item--pending" aria-hidden="true">
+          <div class="work-image-wrap">
+            <div class="work-placeholder">
+              <span class="work-placeholder-text"></span>
+            </div>
+          </div>
+          <h3 class="work-title">&nbsp;</h3>
+          <p class="work-meta">&nbsp;</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Collection close ─── -->
+    <div class="collection-close">
+      <p class="collection-close-text">
+        Print enquiries, framing questions, or interior projects:
+        <a href="mailto:studio@monokhromo.com" style="color: var(--color-white); text-decoration: none; border-bottom: 1px solid var(--color-border); padding-bottom: 1px;">studio@monokhromo.com</a>
+      </p>
+      <a href="/#collection" class="collection-close-link">View Malta in Shadow →</a>
+    </div>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/logo/monokhromo-logo.png" alt="The Monokhromo Collection" class="footer-logo" width="56" height="56">
+        <span class="footer-name">The Monokhromo Collection</span>
+        <span class="footer-tagline">Black-and-white fine art photography</span>
+        <span class="footer-words">Light · Stone · Shadow · Silence</span>
+      </div>
+      <div class="footer-contact">
+        <a href="mailto:studio@monokhromo.com" class="footer-email">studio@monokhromo.com</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 The Monokhromo Collection. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

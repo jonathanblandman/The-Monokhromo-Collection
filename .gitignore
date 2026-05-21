@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Wrangler
+.wrangler/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Certificates — internal operational files, not part of the website
+certificates/mono-lisa/
+certificates/__pycache__/
+
+# Source image assets — large files managed separately
+Image assets/
+
+# Node
+node_modules/

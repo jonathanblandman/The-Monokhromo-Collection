@@ -55,13 +55,24 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-61E58CEBNS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-61E58CEBNS');
+  </script>
 </head>
 <body>
 
   <!-- ─── Header ─── -->
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="/" class="logo" aria-label="The Monokhromo Collection — return to home">MONOKHROMO</a>
+      <a href="/" class="logo" aria-label="The Monokhromo Collection — return to home">
+        <img src="/assets/logo/monokhromo-logo.png" alt="The Monokhromo Collection" class="logo-img" width="40" height="40">
+      </a>
 
       <button
         class="nav-toggle"
@@ -76,7 +87,8 @@
 
       <nav id="nav-menu" aria-label="Main navigation">
         <ul class="nav-list" role="list">
-          <li><a href="#collection" class="nav-link">Collection</a></li>
+          <li><a href="/collections/beauty/" class="nav-link">Beauty</a></li>
+          <li><a href="#collection" class="nav-link">Malta in Shadow</a></li>
           <li><a href="#prints" class="nav-link">Prints</a></li>
           <li><a href="#journal" class="nav-link">Journal</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -95,8 +107,8 @@
           <span class="label">The Monokhromo Collection</span>
           <h1>Black-and-white fine art photography shaped by light, stone, shadow, and silence.</h1>
           <div class="hero-cta" role="group" aria-label="Primary actions">
-            <a href="#collection" class="cta-link">View Collection</a>
-            <a href="#prints" class="cta-link">Print Enquiries</a>
+            <a href="/collections/beauty/" class="cta-link">Beauty Collection</a>
+            <a href="#collection" class="cta-link">Malta in Shadow</a>
           </div>
         </div>
 
@@ -110,8 +122,8 @@
     <!-- ─── Intro ─── -->
     <section class="section-intro" aria-label="About the collection">
       <div class="container">
-        <p class="intro-statement">The Monokhromo Collection is a study of place without colour.</p>
-        <p class="intro-body">Through architecture, street geometry, sea, texture, and human trace, the collection reduces the Mediterranean to its essential forms: light, stone, shadow, and silence.</p>
+        <p class="intro-statement">The Monokhromo Collection is a study of what remains when colour is removed.</p>
+        <p class="intro-body">Two collections in development: <em>Beauty</em> — studio portraits of stillness and interior life — and <em>Malta in Shadow</em> — architecture, sea, and human trace from the Mediterranean. Works released as limited-edition fine art prints.</p>
       </div>
     </section>
 
@@ -268,13 +280,51 @@
       </div>
     </section>
 
+    <!-- ─── Beauty — Featured Work ─── -->
+    <section class="section-collection" id="beauty" aria-labelledby="beauty-heading" style="background-color: var(--color-bg-soft);">
+      <div class="container">
+
+        <header class="section-header">
+          <span class="label">Collection</span>
+          <h2 id="beauty-heading">Beauty</h2>
+          <p class="section-lead">Studio-lit studies of stillness, light, and the quiet presence of the human form. Works in black and white only. Limited editions.</p>
+        </header>
+
+        <div class="gallery-grid" style="margin-block-start: clamp(2.5rem, 5vw, 4rem);">
+
+          <figure class="gallery-figure">
+            <a href="/prints/mono-lisa/" class="gallery-wrap" aria-label="View Mono Lisa — limited edition fine art print">
+              <img
+                src="/assets/images/prints/mono-lisa.jpg"
+                alt="Mono Lisa — black-and-white fine art portrait by The Monokhromo Collection"
+                width="1200"
+                height="1500"
+                class="gallery-img"
+                loading="lazy"
+              >
+            </a>
+            <figcaption class="gallery-caption">
+              <a href="/prints/mono-lisa/" class="caption-title" style="text-decoration: none; color: inherit;">Mono Lisa</a>
+              <span class="caption-loc">Beauty &nbsp;·&nbsp; From £65</span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <div style="margin-block-start: clamp(2.5rem, 5vw, 4rem); text-align: center;">
+          <a href="/collections/beauty/" class="cta-link">View Beauty Collection</a>
+        </div>
+
+      </div>
+    </section>
+
     <!-- ─── Prints ─── -->
     <section class="section-prints" id="prints" aria-labelledby="prints-heading">
       <div class="container container--narrow">
         <span class="label">Fine Art Prints</span>
-        <h2 id="prints-heading">Print Enquiries</h2>
-        <p>Selected works will be released as fine-art prints in A4, A3, and A2 formats.</p>
-        <p>The first collection is currently in development. For availability, print sizing, collection updates, or interior enquiries, contact:</p>
+        <h2 id="prints-heading">Limited Edition Prints</h2>
+        <p>Works are released as limited-edition digital print files — A4, A3, and A2 — delivered at 300 dpi. Each purchase includes a Certificate of Authenticity and printing guidance.</p>
+        <p>For interior enquiries, framing consultation, or large-format requests:</p>
         <a href="mailto:studio@monokhromo.com" class="email-link">studio@monokhromo.com</a>
       </div>
     </section>
@@ -335,7 +385,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo">MONOKHROMO</span>
+        <img src="/assets/logo/monokhromo-logo.png" alt="The Monokhromo Collection" class="footer-logo" width="56" height="56">
         <span class="footer-name">The Monokhromo Collection</span>
         <span class="footer-tagline">Black-and-white fine art photography</span>
         <span class="footer-words">Light · Stone · Shadow · Silence</span>

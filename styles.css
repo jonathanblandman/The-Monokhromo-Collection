@@ -177,19 +177,23 @@ h2 {
 
 /* Logo */
 .logo {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-white);
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
-  transition: color var(--dur) var(--ease);
 }
 
-.logo:hover,
-.logo:focus-visible {
-  color: var(--color-grey-light);
+.logo-img {
+  display: block;
+  width: auto;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  transition: opacity var(--dur) var(--ease);
+}
+
+.logo:hover .logo-img,
+.logo:focus-visible .logo-img {
+  opacity: 1;
 }
 
 /* Nav */
@@ -743,12 +747,11 @@ h2 {
 }
 
 .footer-logo {
-  font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--color-white);
+  display: block;
+  width: auto;
+  height: 56px;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
 .footer-name {
